@@ -8,15 +8,21 @@ class MyTabBarLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(primaryColor: Colors.pink),
+      theme: ThemeData(primaryColor: Color.fromRGBO(229, 237, 244, 1)),
       home: DefaultTabController(
           length: 3,
           initialIndex: 0,
           child: Scaffold(
             appBar: AppBar(
-              title: Text("TabBarLayout"),
+              title: Center(
+                  child: Text(
+                "MinionsStore",
+                style: TextStyle(
+                    color: Color.fromRGBO(12, 59, 102, 1),
+                    fontSize: 30,
+                    fontFamily: 'Bree Serif'),
+              )),
               bottom: TabBar(
-                isScrollable: true,
                 tabs: [
                   Tab(
                       icon: Icon(Icons.shopping_bag_outlined),
