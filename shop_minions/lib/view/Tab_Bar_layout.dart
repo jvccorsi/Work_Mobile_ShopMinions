@@ -14,14 +14,19 @@ class MyTabBarLayout extends StatelessWidget {
           initialIndex: 0,
           child: Scaffold(
             appBar: AppBar(
-              title: Center(
-                  child: Text(
-                "MinionsStore",
-                style: TextStyle(
-                    color: Color.fromRGBO(12, 59, 102, 1),
-                    fontSize: 30,
-                    fontFamily: 'Bree Serif'),
-              )),
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "MinionsStore",
+                    style: TextStyle(
+                        color: Color.fromRGBO(12, 59, 102, 1),
+                        fontSize: 30,
+                        fontFamily: 'Bree Serif'),
+                  ),
+                  Image.asset('assets/images/logo_app_bar.png'),
+                ],
+              ),
               bottom: TabBar(
                 tabs: [
                   Tab(
