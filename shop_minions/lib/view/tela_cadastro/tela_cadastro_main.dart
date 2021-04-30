@@ -35,28 +35,106 @@ class TelaCadastroState extends State<MyTelaCadastro> {
           ),
         ),
       ),
-      backgroundColor: Color.fromRGBO(253, 217, 0, 1),
-      body: Container(
-        padding: const EdgeInsets.all(40.0),
-        child: Center(
-          child: Column(
-            children: [
-              Form(
-                key: formKey,
-                child: Column(
-                  children: [
-                    usernameFormField(),
-                  ],
+      backgroundColor: Color.fromRGBO(253, 228, 65, 1),
+      body: SingleChildScrollView(
+        child: Container(
+          padding: const EdgeInsets.all(40.0),
+          child: Center(
+            child: Column(
+              children: [
+                Form(
+                  key: formKey,
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.person,
+                            color: Color.fromRGBO(116, 128, 139, 1),
+                            size: 30,
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(right: 20),
+                          ),
+                          usernameFormField('Nome completo', false),
+                        ],
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(top: 30),
+                      ),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.email_outlined,
+                            color: Color.fromRGBO(116, 128, 139, 1),
+                            size: 30,
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(right: 20),
+                          ),
+                          usernameFormField('Email', false),
+                        ],
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(top: 30),
+                      ),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.lock_outline,
+                            color: Color.fromRGBO(116, 128, 139, 1),
+                            size: 30,
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(right: 20),
+                          ),
+                          usernameFormField('Senha', true),
+                        ],
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(top: 30),
+                      ),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.lock_outline,
+                            color: Color.fromRGBO(116, 128, 139, 1),
+                            size: 30,
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(right: 20),
+                          ),
+                          usernameFormField('Confirme sua senha', true),
+                        ],
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(top: 30),
+                      ),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.phone,
+                            color: Color.fromRGBO(116, 128, 139, 1),
+                            size: 30,
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(right: 20),
+                          ),
+                          usernameFormField('Telefone', false),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 
-  Widget usernameFormField() {
+  Widget usernameFormField(value, obscure) {
     return Container(
       width: 350,
       decoration: BoxDecoration(
@@ -64,6 +142,7 @@ class TelaCadastroState extends State<MyTelaCadastro> {
         borderRadius: BorderRadius.circular(29),
       ),
       child: TextFormField(
+        obscureText: obscure,
         keyboardType: TextInputType.name,
         style: TextStyle(
           fontFamily: 'PT Sans bold',
@@ -71,13 +150,8 @@ class TelaCadastroState extends State<MyTelaCadastro> {
           color: Color.fromRGBO(116, 128, 139, 1),
         ),
         decoration: InputDecoration(
-          hintText: "Nome completo",
-          icon: Icon(
-            Icons.person,
-            color: Color.fromRGBO(116, 128, 139, 1),
-            size: 30,
-          ),
-          contentPadding: EdgeInsets.fromLTRB(2.0, 15, 20, 15),
+          hintText: '$value',
+          contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
           border: InputBorder.none,
           focusedBorder: InputBorder.none,
           enabledBorder: InputBorder.none,
