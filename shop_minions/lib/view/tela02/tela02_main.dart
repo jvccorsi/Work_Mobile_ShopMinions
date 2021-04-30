@@ -7,76 +7,77 @@ class MainTela02 extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-          child: Column(
-        children: <Widget>[
-          margin_fixed_top(),
-          text_sobre_nos(),
-          hr_titulos(),
-          photo_my(),
-          margin_fixed_top(),
-          titulo('História'),
-          hr_titulos(),
-          conteudo(
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."),
-          margin_fixed_top(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Column(
-                children: [
-                  titulo('Missão'),
-                  hr_titulos(),
-                  conteudo('1.Lorem Ipsum\n2.Lorem Ipsum\n3.Lorem Ipsum'),
-                ],
-              ),
-              margin_fixed_right(),
-              Column(
-                children: [
-                  titulo('Visão'),
-                  hr_titulos(),
-                  conteudo('1.Lorem Ipsum\n2.Lorem Ipsum\n3.Lorem Ipsum'),
-                ],
-              ),
-              margin_fixed_right(),
-              Column(
-                children: [
-                  titulo('Valor'),
-                  hr_titulos(),
-                  conteudo('1.Lorem Ipsum\n2.Lorem Ipsum\n3.Lorem Ipsum'),
-                ],
-              ),
-            ],
-          ),
-          margin_fixed_top(),
-          encomenda_text(),
-          Divider(),
-          SizedBox(
-            height: 50,
-            width: 250,
-            child: RaisedButton(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(18.0),
-                side: BorderSide(color: Color.fromRGBO(43, 105, 161, 1)),
-              ),
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => MainTela03()),
-                );
-              },
-              color: Color.fromRGBO(43, 105, 161, 1),
-              textColor: Colors.white,
-              child: Text("Clique aqui".toUpperCase(),
-                  style: TextStyle(fontSize: 20, fontFamily: 'PT Sans Bold')),
+        child: Column(
+          children: <Widget>[
+            margin_fixed_top(),
+            text_sobre_nos(),
+            hr_titulos(),
+            photo_my(),
+            margin_fixed_top(),
+            titulo('História'),
+            hr_titulos(),
+            conteudo(
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."),
+            margin_fixed_top(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Column(
+                  children: [
+                    titulo('Missão'),
+                    hr_titulos(),
+                    conteudo('1.Lorem Ipsum\n2.Lorem Ipsum\n3.Lorem Ipsum'),
+                  ],
+                ),
+                margin_fixed_right(),
+                Column(
+                  children: [
+                    titulo('Visão'),
+                    hr_titulos(),
+                    conteudo('1.Lorem Ipsum\n2.Lorem Ipsum\n3.Lorem Ipsum'),
+                  ],
+                ),
+                margin_fixed_right(),
+                Column(
+                  children: [
+                    titulo('Valor'),
+                    hr_titulos(),
+                    conteudo('1.Lorem Ipsum\n2.Lorem Ipsum\n3.Lorem Ipsum'),
+                  ],
+                ),
+              ],
             ),
-          ),
-          Container(
-            //margin: EdgeInsets.all(40),
-            alignment: Alignment.bottomRight,
-            child: Image.asset('assets/images/footer_equipe.png',
-                height: 140, width: 110),
-          )
-        ],
-      )),
+            margin_fixed_top(),
+            encomenda_text(),
+            Divider(),
+            SizedBox(
+              height: 50,
+              width: 250,
+              child: RaisedButton(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(18.0),
+                  side: BorderSide(color: Color.fromRGBO(43, 105, 161, 1)),
+                ),
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => MainTela03()),
+                  );
+                },
+                color: Color.fromRGBO(43, 105, 161, 1),
+                textColor: Colors.white,
+                child: Text("Clique aqui".toUpperCase(),
+                    style: TextStyle(fontSize: 20, fontFamily: 'PT Sans Bold')),
+              ),
+            ),
+            Container(
+              //margin: EdgeInsets.all(40),
+              alignment: Alignment.bottomRight,
+              child: Image.asset('assets/images/footer_equipe.png',
+                  height: 140, width: 110),
+            )
+          ],
+        ),
+      ),
     );
   }
 
