@@ -200,7 +200,13 @@ class MyTelaCadastroState extends State<MyTelaCadastro> {
                       Container(
                         margin: EdgeInsets.only(top: 30),
                       ),
-                      submitButton(context)
+                      submitButton(context),
+                      Container(
+                        //margin: EdgeInsets.all(40),
+                        alignment: Alignment.bottomRight,
+                        child: Image.asset('assets/images/logo_criar_conta.png',
+                            height: 140, width: 110),
+                      )
                     ],
                   ),
                 ),
