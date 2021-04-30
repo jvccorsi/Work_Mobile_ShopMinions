@@ -294,10 +294,11 @@ class MyTelaCadastroState extends State<MyTelaCadastro> {
         onPressed: () {
           final snackBar = SnackBar(
             content: Text("Conta criada com sucesso"),
-            backgroundColor: Colors.green,
+            backgroundColor: Color.fromRGBO(19, 139, 46, 1),
             duration: Duration(seconds: 10),
             action: SnackBarAction(
               label: 'Voltar ao login',
+              textColor: Colors.white,
               onPressed: () {
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (context) => MainTelaLogin()),
