@@ -27,7 +27,8 @@ class MyTelaCadastroState extends State<MyTelaCadastro> {
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(229, 237, 244, 1),
         title: Center(
-          child: Column(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 'Cadastro',
