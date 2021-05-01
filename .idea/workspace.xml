@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e5b2e2b6-8f41-44fb-8a75-313d7431b2de" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/shop_minions/lib/view/tela01/tela01_main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/shop_minions/lib/view/tela01/tela01_main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop_minions/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/shop_minions/pubspec.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="e5b2e2b6-8f41-44fb-8a75-313d7431b2de" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -89,9 +86,9 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="100" y="100" width="1720" height="848" key="AVDManager" timestamp="1619874787723">
+    <state x="100" y="100" width="1720" height="848" key="AVDManager" timestamp="1619887872240">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="100" y="100" width="1720" height="848" key="AVDManager/0.0.1920.1050@0.0.1920.1050" timestamp="1619874787723" />
+    <state x="100" y="100" width="1720" height="848" key="AVDManager/0.0.1920.1050@0.0.1920.1050" timestamp="1619887872240" />
   </component>
 </project>
