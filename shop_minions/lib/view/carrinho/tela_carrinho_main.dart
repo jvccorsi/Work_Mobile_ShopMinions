@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shop_minions/view/tela03/tela03_main.dart';
 
 TextStyle titulo = TextStyle(
     fontFamily: 'Bree Serif',
@@ -28,7 +29,7 @@ class CarrinhoMain extends StatelessWidget {
           ),
         ),
       ),
-      body: Center(child: generateListView()),
+      body: Center(child: generateListView(context)),
     );
   }
 
@@ -52,11 +53,12 @@ class CarrinhoMain extends StatelessWidget {
   }
 
   GlobalKey<FormState> formKey = new GlobalKey<FormState>();
-  Widget generateListView() {
+  Widget generateListView(BuildContext context) {
     return ListView(
       padding: const EdgeInsets.all(8),
       children: <Widget>[
         titulo_function(),
+        margin_fixed_top(),
         Container(
           child: Card(
             elevation: 8,
@@ -75,18 +77,19 @@ class CarrinhoMain extends StatelessWidget {
                 // key: formKey,
                 child: usernameFormField('Quantidade'),
               ),
-              leading: Image.asset('assets/images/logo_criar_conta.png',
+              leading: Image.asset('assets/images/minion_01.png',
                   height: 50, width: 48),
             ),
           ),
         ),
+        margin_fixed_top(),
         Container(
           child: Card(
             elevation: 8,
             color: Color.fromRGBO(229, 237, 244, 1),
             child: ListTile(
               title: Text(
-                '#01 Engenheiro',
+                '#02 Instrumentista',
                 style: TextStyle(
                   fontFamily: 'Bree Serif',
                   fontSize: 18,
@@ -98,18 +101,19 @@ class CarrinhoMain extends StatelessWidget {
                 // key: formKey,
                 child: usernameFormField('Quantidade'),
               ),
-              leading: Image.asset('assets/images/logo_criar_conta.png',
+              leading: Image.asset('assets/images/minion_02.png',
                   height: 50, width: 48),
             ),
           ),
         ),
+        margin_fixed_top(),
         Container(
           child: Card(
             elevation: 8,
             color: Color.fromRGBO(229, 237, 244, 1),
             child: ListTile(
               title: Text(
-                '#01 Engenheiro',
+                "#03 Chef Jacquin",
                 style: TextStyle(
                   fontFamily: 'Bree Serif',
                   fontSize: 18,
@@ -121,18 +125,19 @@ class CarrinhoMain extends StatelessWidget {
                 //key: formKey,
                 child: usernameFormField('Quantidade'),
               ),
-              leading: Image.asset('assets/images/logo_criar_conta.png',
+              leading: Image.asset('assets/images/minion_03.png',
                   height: 50, width: 48),
             ),
           ),
         ),
+        margin_fixed_top(),
         Container(
           child: Card(
             elevation: 8,
             color: Color.fromRGBO(229, 237, 244, 1),
             child: ListTile(
               title: Text(
-                '#01 Engenheiro',
+                "#04 Wolverine",
                 style: TextStyle(
                   fontFamily: 'Bree Serif',
                   fontSize: 18,
@@ -144,8 +149,76 @@ class CarrinhoMain extends StatelessWidget {
                 //key: formKey,
                 child: usernameFormField('Quantidade'),
               ),
-              leading: Image.asset('assets/images/logo_criar_conta.png',
+              leading: Image.asset('assets/images/minion_04.png',
                   height: 50, width: 48),
+            ),
+          ),
+        ),
+        margin_fixed_top(),
+        Container(
+          child: Card(
+            elevation: 8,
+            color: Color.fromRGBO(229, 237, 244, 1),
+            child: ListTile(
+              title: Text(
+                "#05 James",
+                style: TextStyle(
+                  fontFamily: 'Bree Serif',
+                  fontSize: 18,
+                  color: Color.fromRGBO(69, 83, 94, 1),
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              trailing: Form(
+                //key: formKey,
+                child: usernameFormField('Quantidade'),
+              ),
+              leading: Image.asset('assets/images/minion_05.png',
+                  height: 50, width: 48),
+            ),
+          ),
+        ),
+        margin_fixed_top(),
+        Container(
+          child: Card(
+            elevation: 8,
+            color: Color.fromRGBO(229, 237, 244, 1),
+            child: ListTile(
+              title: Text(
+                "#06 Psicopata",
+                style: TextStyle(
+                  fontFamily: 'Bree Serif',
+                  fontSize: 18,
+                  color: Color.fromRGBO(69, 83, 94, 1),
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              trailing: Form(
+                //key: formKey,
+                child: usernameFormField('Quantidade'),
+              ),
+              leading: Image.asset('assets/images/minion_06.png',
+                  height: 50, width: 48),
+            ),
+          ),
+        ),
+        margin_fixed_top(),
+        Container(
+          child: ListTile(
+            title: RaisedButton(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(18),
+                side: BorderSide(color: Color.fromRGBO(43, 105, 161, 1)),
+              ),
+              color: Color.fromRGBO(43, 105, 161, 1),
+              textColor: Colors.white,
+              child: Text("Confirmar",
+                  style: TextStyle(fontSize: 18, fontFamily: 'PT Sans Bold')),
+              onPressed: () {
+                Navigator.of(context).pop(
+                  MaterialPageRoute(builder: (context) => MainTela03()),
+                );
+              },
             ),
           ),
         ),
@@ -162,7 +235,7 @@ class CarrinhoMain extends StatelessWidget {
       ),
       margin: EdgeInsets.all(5),
       child: TextFormField(
-        keyboardType: TextInputType.name,
+        keyboardType: TextInputType.number,
         style: TextStyle(
           fontFamily: 'PT Sans bold',
           fontSize: 14,

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shop_minions/view/tela03/tela03_main.dart';
+import 'package:shop_minions/view/carrinho/tela_carrinho_main.dart';
 
 class MainTela02 extends StatelessWidget {
   @override
@@ -60,7 +60,7 @@ class MainTela02 extends StatelessWidget {
                 ),
                 onPressed: () {
                   Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => MainTela03()),
+                    MaterialPageRoute(builder: (context) => CarrinhoMain()),
                   );
                 },
                 color: Color.fromRGBO(43, 105, 161, 1),
