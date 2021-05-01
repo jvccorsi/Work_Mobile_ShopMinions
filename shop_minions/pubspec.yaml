@@ -38,13 +38,7 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
-
-  # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/logo_app_bar.png
     - assets/images/minions_equipe.png
@@ -52,6 +46,13 @@ flutter:
     - assets/images/footer_equipe.png
     - assets/images/usu_icon.png
     - assets/images/logo_criar_conta.png
+    - assets/images/img-login-half.png
+    - assets/images/minion_01.png
+    - assets/images/minion_03.png
+    - assets/images/minion_02.png
+    - assets/images/minion_04.png
+    - assets/images/minion_05.png
+    - assets/images/minion_06.png
 
     
   
