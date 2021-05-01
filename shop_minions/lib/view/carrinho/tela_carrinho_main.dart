@@ -12,7 +12,6 @@ TextStyle titulo = TextStyle(
 class CarrinhoMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(229, 237, 244, 1),

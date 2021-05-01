@@ -12,7 +12,9 @@ class MainTelaLogin extends StatelessWidget {
       decoration: BoxDecoration(
           image: DecorationImage(
               image: AssetImage("assets/images/img-login.png"),
-              fit: BoxFit.cover)),
+              fit: BoxFit.cover
+              )
+            ),
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -21,9 +23,10 @@ class MainTelaLogin extends StatelessWidget {
                 key: formKey,
                 child: Column(
                   children: [
-                    SizedBox(height: 250),
-                    Row(
-                        children: [
+                    SizedBox(height: 150),
+                        Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
                           Icon(
                             Icons.email_outlined,
                             color: Color.fromRGBO(116, 128, 139, 1),
@@ -35,8 +38,9 @@ class MainTelaLogin extends StatelessWidget {
                           usernameFormField('Email', false),
                         ],
                       ),
-                    SizedBox(height: 30),
+                    SizedBox(height: 25),
                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Icon(
                             Icons.lock_outline,
@@ -50,10 +54,21 @@ class MainTelaLogin extends StatelessWidget {
                         ],
                       ),
                     SizedBox(height: 50),
-
                     submitButton(context),
                     SizedBox(height: 10),
                     gestureLink(context),
+                    /*Positioned(
+                      left: 0,
+                      bottom: 0,
+                      top:180,
+                      child:Container(
+                       decoration: BoxDecoration(
+                        color: Colors.black26
+                      ),
+                      alignment: Alignment.bottomLeft,
+                      child: Image.asset('assets/images/footer_login.png',width: 150,height:80)
+                    )
+                    )*/
                   ],
                 )),
           ],
@@ -88,7 +103,7 @@ class MainTelaLogin extends StatelessWidget {
       child: Text(
         "Registre-se aqui",
         style:
-            TextStyle(decoration: TextDecoration.underline, color: Colors.blue),
+            TextStyle(decoration: TextDecoration.underline, color: Colors.blue,fontSize: 16),
       ),
       onTap: () {
         Navigator.of(context).push(

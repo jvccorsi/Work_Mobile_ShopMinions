@@ -14,9 +14,23 @@ class MainTela03State extends State<MainTela03> {
   Widget build(BuildContext context) {
     return Center(
       child: (Container(
+        width: 350,
+        margin: EdgeInsets.all(5),
+        decoration: BoxDecoration(
+            color: Color.fromRGBO(53, 159, 255, 1),
+            borderRadius: BorderRadius.circular(25)),
         child: Column(
           children: [
-            submitButton(context),
+            Padding(
+              padding: const EdgeInsets.all(30),
+              child: title(),
+            ),
+            selectMinion(context),
+            Divider(height: 15,color: Colors.white,),
+            Padding(
+              padding: const EdgeInsets.all(12),
+              child: submitButton(),
+            ),
           ],
         ),
       )),
@@ -24,14 +38,14 @@ class MainTela03State extends State<MainTela03> {
   }
 }
 
-Widget submitButton(BuildContext context) {
+Widget selectMinion(BuildContext context) {
   return SizedBox(
-    width: 400,
+    width: 300,
     height: 50,
     child: RaisedButton(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(18),
-        side: BorderSide(color: Colors.grey),
+        side: BorderSide(color: Color.fromRGBO(17, 86, 149, 1)),
       ),
       color: Colors.grey,
       textColor: Colors.white,
@@ -42,6 +56,34 @@ Widget submitButton(BuildContext context) {
           MaterialPageRoute(builder: (context) => CarrinhoMain()),
         );
       },
+    ),
+  );
+}
+
+Widget submitButton() {
+  return SizedBox(
+    width: 300,
+    height: 50,
+    child: RaisedButton(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(18),
+      ),
+      color: Color.fromRGBO(17, 86, 149, 1),
+      textColor: Colors.white,
+      child: Text("Encomendar",
+          style: TextStyle(fontSize: 22, fontFamily: 'PT Sans Bold',color: Colors.white)),
+    ),
+  );
+}
+
+Widget title() {
+  return Text(
+    "Faça sua encomenda",
+    style: TextStyle(
+      fontFamily: 'Bree Serif',
+      fontSize: 23,
+      color: Colors.white,
+      fontWeight: FontWeight.bold,
     ),
   );
 }
