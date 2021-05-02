@@ -8,73 +8,69 @@ class MainTelaLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage("assets/images/img-login.png"),
-              fit: BoxFit.cover
-              )
-            ),
+        body: SingleChildScrollView(
+            child: Container(
+            decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("assets/images/img-login.png"),
+                fit: BoxFit.cover
+                )
+              ),
       child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Form(
-                key: formKey,
-                child: Column(
-                  children: [
-                    SizedBox(height: 150),
-                        Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Icon(
-                            Icons.email_outlined,
-                            color: Color.fromRGBO(116, 128, 139, 1),
-                            size: 30,
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(right: 5),
-                          ),
-                          usernameFormField('Email', false),
-                        ],
-                      ),
-                    SizedBox(height: 25),
-                     Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.lock_outline,
-                            color: Color.fromRGBO(116, 128, 139, 1),
-                            size: 30,
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(right: 5),
-                          ),
-                          usernameFormField('Senha', true),
-                        ],
-                      ),
-                    SizedBox(height: 50),
-                    submitButton(context),
-                    SizedBox(height: 10),
-                    gestureLink(context),
-                    /*Positioned(
-                      left: 0,
-                      bottom: 0,
-                      top:180,
-                      child:Container(
-                       decoration: BoxDecoration(
-                        color: Colors.black26
-                      ),
-                      alignment: Alignment.bottomLeft,
-                      child: Image.asset('assets/images/footer_login.png',width: 150,height:80)
-                    )
-                    )*/
-                  ],
-                )),
-          ],
-        ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Form(
+                  key: formKey,
+                  child: Column(
+                    children: [
+                      SizedBox(height: 330),
+                          Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Icon(
+                              Icons.email_outlined,
+                              color: Color.fromRGBO(116, 128, 139, 1),
+                              size: 30,
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(right: 5),
+                            ),
+                            usernameFormField('Email', false),
+                          ],
+                        ),
+                      SizedBox(height: 25),
+                       Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.lock_outline,
+                              color: Color.fromRGBO(116, 128, 139, 1),
+                              size: 30,
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(right: 5),
+                            ),
+                            usernameFormField('Senha', true),
+                          ],
+                        ),
+                      SizedBox(height: 50),
+                      submitButton(context),
+                      SizedBox(height: 10),
+                      gestureLink(context),
+                      Container(
+                          //margin: EdgeInsets.all(40),
+                          alignment: Alignment.bottomLeft,
+                          child: Image.asset('assets/images/footer_login.png',
+                              height: 140, width: 110),
+                        )
+                    ],
+                  )),
+            ],
+          ),
       ),
-    ));
+    ),
+        ));
   }
 
   Widget submitButton(BuildContext context) {
