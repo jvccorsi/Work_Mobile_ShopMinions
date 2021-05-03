@@ -8,8 +8,7 @@ class MainTelaLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SingleChildScrollView(
-            child: Container(
+        body: Container(
             decoration: BoxDecoration(
             image: DecorationImage(
                 image: AssetImage("assets/images/img-login.png"),
@@ -58,19 +57,13 @@ class MainTelaLogin extends StatelessWidget {
                       submitButton(context),
                       SizedBox(height: 10),
                       gestureLink(context),
-                      Container(
-                          //margin: EdgeInsets.all(40),
-                          alignment: Alignment.bottomLeft,
-                          child: Image.asset('assets/images/footer_login.png',
-                              height: 140, width: 110),
-                        )
                     ],
                   )),
             ],
           ),
       ),
     ),
-        ));
+        );
   }
 
   Widget submitButton(BuildContext context) {
