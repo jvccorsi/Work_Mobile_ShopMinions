@@ -1,0 +1,25 @@
+{
+  "name": "Work_Mobile_ShopMinions",
+  "version": "1.0.0",
+  "description": "Trabalho em Flutter para a disciplina Dispositivos Móveis da faculdade de Tecnologia da Unicamp (FT)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jvccorsi/Work_Mobile_ShopMinions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jvccorsi/Work_Mobile_ShopMinions/issues"
+  },
+  "homepage": "https://github.com/jvccorsi/Work_Mobile_ShopMinions#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "socket.io": "^4.1.2"
+  }
+}
