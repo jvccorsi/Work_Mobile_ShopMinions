@@ -52,6 +52,25 @@ app.post(endpoint, (req, res) => {
    // notify();
 });
 
+app.put(`${endpoint}/:id`, (req, res) =>{
+    const id = parseInt(req.params.id);
+    const pedidos = {
+        id : id,
+        nome_completo: req.body['nome_completo'],
+        email: req.body['email'],
+        telefone: req.body['telefone'],
+        id_minion : req.body["id_minion"],
+        quantidade : req.body["quantidade"]
+    };
+
+    pedido[id] = pedidos;
+    res.send("1");
+    //notify();
+});
+
+
+
+
 /*
   Criar um socket para notificar usuários das mudanças.
 */

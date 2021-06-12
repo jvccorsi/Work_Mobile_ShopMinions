@@ -4,7 +4,6 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:shop_minions/model/pedido.dart';
-import 'package:shop_minions/view/tela03/tela03_main.dart';
 //import 'package:socket_io_client/socket_io_client.dart';
 
 class DatabaseRemoveServer {
@@ -13,10 +12,18 @@ class DatabaseRemoveServer {
   String databaseUrl = "http://192.168.0.201:3000/pedido";
   Dio _dio = Dio();
 
-  Future<int> insertlogin(MainTela03 pedido) async {
+  Future<int> insertPedido(Pedido pedido) async {
     await _dio.post(this.databaseUrl,
         options: Options(headers: {"Accept": "application/json"}),
-        data: jsonEncode({"email": pedido.email, "senha": pedido.senha}));
+        data: jsonEncode(
+          {
+            "nome_completo": pedido.nome_completo,
+            "email": pedido.email,
+            "telefone": pedido.telefone,
+            "id_minion": pedido.id_minion,
+            "quantidade": pedido.quantidade,
+          },
+        ));
     return 1;
   }
 
