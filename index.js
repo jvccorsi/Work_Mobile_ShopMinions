@@ -12,17 +12,19 @@ app.get('/', function(req, res){res.send('Teste server')});
   Servidor propriamente dito
 */
  
-const login = [];
-
+const pedido = [
+    {id:0, }
+];
+ 
 const endpoint = "/pedido";
 
 app.get(endpoint, function(req, res){
-    res.send(login.filter(Boolean));
+    res.send(pedido.filter(Boolean));
 });
 
 app.get(`${endpoint}/:id`, function(req, res){
     const id = req.params.id;
-    const note = login[id];
+    const note = pedido[id];
 
     if (!note){
         res.send("{}");
@@ -33,11 +35,11 @@ app.get(`${endpoint}/:id`, function(req, res){
 //INSERT
 app.post(endpoint, (req, res) => {
     const note = {
-        id : login.length,
+        id : pedido.length,
         email : req.body["email"],
         senha : req.body["senha"]
     };      
-    login.push(note);
+    pedido.push(note);
     res.send("1");
     
     notify();
@@ -51,7 +53,7 @@ app.put(`${endpoint}/:id`, (req, res) =>{
         senha : req.body["senha"]
     };
 
-    login[id] = note;
+    pedido[id] = note;
     res.send("1");
 
     notify();
@@ -59,7 +61,7 @@ app.put(`${endpoint}/:id`, (req, res) =>{
 //DELETE:
 app.delete(`${endpoint}/:id`, (req, res) => {
     const id = req.params.id;
-    delete login[id];
+    delete pedido[id];
     res.send("1");
 
     // Notificar todos
