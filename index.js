@@ -49,7 +49,7 @@ app.post(endpoint, (req, res) => {
     };      
     pedido.push(pedidos);
     res.send("1");
-   notify();
+    notify();
 });
 
 app.put(`${endpoint}/:id`, (req, res) =>{
