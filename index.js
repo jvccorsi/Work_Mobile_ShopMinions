@@ -38,6 +38,7 @@ app.get(`${endpoint}/:id`, function(req, res){
 });
 //INSERT
 app.post(endpoint, (req, res) => {
+   // console.log('insert concluído')
     const pedidos = {
         id : pedido.length,
         nome_completo: req.body['nome_completo'],
