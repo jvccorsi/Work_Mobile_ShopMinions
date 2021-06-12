@@ -49,7 +49,7 @@ app.post(endpoint, (req, res) => {
     };      
     pedido.push(pedidos);
     res.send("1");
-   // notify();
+   notify();
 });
 
 app.put(`${endpoint}/:id`, (req, res) =>{
@@ -65,11 +65,8 @@ app.put(`${endpoint}/:id`, (req, res) =>{
 
     pedido[id] = pedidos;
     res.send("1");
-    //notify();
+    notify();
 });
-
-
-
 
 /*
   Criar um socket para notificar usuários das mudanças.

@@ -4,7 +4,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:shop_minions/model/pedido.dart';
-//import 'package:socket_io_client/socket_io_client.dart';
+import 'package:socket_io_client/socket_io_client.dart';
 
 class DatabaseRemoveServer {
   static DatabaseRemoveServer helper = DatabaseRemoveServer._createInstance();
@@ -27,17 +27,7 @@ class DatabaseRemoveServer {
     return 1;
   }
 
-  /* 
-   STREAM
-
-
-  notify() async {
-    if (_controller != null) {
-      var response = await getLoginList();
-      _controller.sink.add(response);
-    }
-  }
-
+  //STREAM
   Stream get stream {
     if (_controller == null) {
       _controller = StreamController.broadcast();
@@ -47,7 +37,7 @@ class DatabaseRemoveServer {
           // "https://si700.herokuapp.com/",
           OptionBuilder().setTransports(['websocket']) // for Flutter or Dart VM
               .build());
-      socket.on('invalidate', (_) => notify());
+      socket.on('invalidate', (data) => print(data));
     }
     return _controller.stream.asBroadcastStream();
   }
@@ -59,8 +49,7 @@ class DatabaseRemoveServer {
     }
   }
 
-  static StreamController _controller;  */
-
+  static StreamController _controller;
 }
 
 void main() async {
