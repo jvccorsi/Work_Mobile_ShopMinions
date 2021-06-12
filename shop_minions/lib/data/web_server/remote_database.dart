@@ -6,9 +6,9 @@ import 'package:dio/dio.dart';
 import 'package:shop_minions/model/pedido.dart';
 import 'package:socket_io_client/socket_io_client.dart';
 
-class DatabaseRemoveServer {
-  static DatabaseRemoveServer helper = DatabaseRemoveServer._createInstance();
-  DatabaseRemoveServer._createInstance();
+class DatabaseRemoteServer {
+  static DatabaseRemoteServer helper = DatabaseRemoteServer._createInstance();
+  DatabaseRemoteServer._createInstance();
   String databaseUrl = "http://192.168.0.201:3000/pedido";
   Dio _dio = Dio();
 
@@ -53,7 +53,7 @@ class DatabaseRemoveServer {
 }
 
 void main() async {
-  DatabaseRemoveServer pedido_database = DatabaseRemoveServer.helper;
+  DatabaseRemoteServer pedido_database = DatabaseRemoteServer.helper;
   Pedido pedido = Pedido();
   pedido.email = ('aoaoaooa');
   pedido.nome_completo = ('aa');
