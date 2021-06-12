@@ -46,6 +46,26 @@ class Pedido {
     }
   }
 
+  set telefone(String new_telefone) {
+    if (new_telefone.length > 0) {
+      this._telefone = new_telefone;
+    }
+  }
+
+  set nome_completo(String new_name) {
+    if (new_name.length > 0) {
+      this._nome_completo = new_name;
+    }
+  }
+
+  set id_minion(int new_id_minion) {
+    this._id_minion = new_id_minion;
+  }
+
+  set quantidade(int new_quantidade) {
+    this._quantidade = new_quantidade;
+  }
+
   set dataLocation(int newLocation) {
     if (newLocation > 0 && newLocation < 3) {
       this._dataLocation = newLocation;

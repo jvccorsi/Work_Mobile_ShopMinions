@@ -60,4 +60,16 @@ class DatabaseRemoveServer {
   }
 
   static StreamController _controller;  */
+
+}
+
+void main() async {
+  DatabaseRemoveServer pedido_database = DatabaseRemoveServer.helper;
+  Pedido pedido = Pedido();
+  pedido.email = ('aoaoaooa');
+  pedido.nome_completo = ('aa');
+  pedido.id_minion = 1;
+  pedido.quantidade = 10;
+  pedido.telefone = '19994753282';
+  pedido_database.insertPedido(pedido);
 }
