@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shop_minions/logic/manage_db/manage_remote_db_bloc.dart';
 import 'package:shop_minions/view/Tab_Bar_layout.dart';
 import 'package:shop_minions/view/tela_cadastro/tela_cadastro_main.dart';
 
@@ -8,14 +10,12 @@ class MainTelaLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-            decoration: BoxDecoration(
+      body: Container(
+        decoration: BoxDecoration(
             image: DecorationImage(
                 image: AssetImage("assets/images/img-login.png"),
-                fit: BoxFit.cover
-                )
-              ),
-      child: Center(
+                fit: BoxFit.cover)),
+        child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -24,35 +24,35 @@ class MainTelaLogin extends StatelessWidget {
                   child: Column(
                     children: [
                       SizedBox(height: 330),
-                          Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Icon(
-                              Icons.email_outlined,
-                              color: Color.fromRGBO(116, 128, 139, 1),
-                              size: 30,
-                            ),
-                            Container(
-                              margin: EdgeInsets.only(right: 5),
-                            ),
-                            usernameFormField('Email', false),
-                          ],
-                        ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(
+                            Icons.email_outlined,
+                            color: Color.fromRGBO(116, 128, 139, 1),
+                            size: 30,
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(right: 5),
+                          ),
+                          usernameFormField('Email', false),
+                        ],
+                      ),
                       SizedBox(height: 25),
-                       Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.lock_outline,
-                              color: Color.fromRGBO(116, 128, 139, 1),
-                              size: 30,
-                            ),
-                            Container(
-                              margin: EdgeInsets.only(right: 5),
-                            ),
-                            usernameFormField('Senha', true),
-                          ],
-                        ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.lock_outline,
+                            color: Color.fromRGBO(116, 128, 139, 1),
+                            size: 30,
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(right: 5),
+                          ),
+                          usernameFormField('Senha', true),
+                        ],
+                      ),
                       SizedBox(height: 50),
                       submitButton(context),
                       SizedBox(height: 10),
@@ -61,9 +61,9 @@ class MainTelaLogin extends StatelessWidget {
                   )),
             ],
           ),
+        ),
       ),
-    ),
-        );
+    );
   }
 
   Widget submitButton(BuildContext context) {
@@ -91,8 +91,10 @@ class MainTelaLogin extends StatelessWidget {
     return GestureDetector(
       child: Text(
         "Registre-se aqui",
-        style:
-            TextStyle(decoration: TextDecoration.underline, color: Colors.blue,fontSize: 16),
+        style: TextStyle(
+            decoration: TextDecoration.underline,
+            color: Colors.blue,
+            fontSize: 16),
       ),
       onTap: () {
         Navigator.of(context).push(

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shop_minions/logic/manage_db/manage_remote_db_bloc.dart';
 import 'dart:async';
 import 'package:shop_minions/view/tela_login/tela_login_main.dart';
 
