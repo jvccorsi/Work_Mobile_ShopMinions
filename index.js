@@ -13,7 +13,10 @@ app.get('/', function(req, res){res.send('Teste server')});
 */
  
 const pedido = [
-    {id:0, }
+    {id:0, nome_completo:"João Victor Corsi", email:"jvccorsi@hotmail.com",
+    telefone: 19994753282, id_minion:02, quantidade:20 },
+    {id:1, nome_completo:"João Victor Corsi", email:"jvccorsi@hotmail.com",
+    telefone: 19994753282, id_minion:02, quantidade:20 }
 ];
  
 const endpoint = "/pedido";
@@ -22,51 +25,32 @@ app.get(endpoint, function(req, res){
     res.send(pedido.filter(Boolean));
 });
 
+//GET
 app.get(`${endpoint}/:id`, function(req, res){
     const id = req.params.id;
-    const note = pedido[id];
+    const pedidos = pedido[id];
 
-    if (!note){
+    if (!pedidos){
         res.send("{}");
     } else {
-        res.send(note);
+        res.send(pedidos);
     }   
 });
 //INSERT
 app.post(endpoint, (req, res) => {
-    const note = {
+    const pedidos = {
         id : pedido.length,
-        email : req.body["email"],
-        senha : req.body["senha"]
+        nome_completo: req.body['nome_completo'],
+        email: req.body['email'],
+        telefone: req.body['telefone'],
+        id_minion : req.body["id_minion"],
+        quantidade : req.body["quantidade"]
     };      
-    pedido.push(note);
+    pedido.push(pedidos);
     res.send("1");
-    
-    notify();
+   // notify();
 });
-//UPDATE
-app.put(`${endpoint}/:id`, (req, res) =>{
-    const id = parseInt(req.params.id);
-    const note = {
-        id : id,
-        email : req.body["email"],
-        senha : req.body["senha"]
-    };
 
-    pedido[id] = note;
-    res.send("1");
-
-    notify();
-});
-//DELETE:
-app.delete(`${endpoint}/:id`, (req, res) => {
-    const id = req.params.id;
-    delete pedido[id];
-    res.send("1");
-
-    // Notificar todos
-    notify();
-});
 /*
   Criar um socket para notificar usuários das mudanças.
 */
