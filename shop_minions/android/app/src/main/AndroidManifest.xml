@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.shop_minions">
-   <application
+   <application android:usesCleartextTraffic="true"
         android:label="shop_minions"
         android:icon="@mipmap/ic_launcher">
         <activity
