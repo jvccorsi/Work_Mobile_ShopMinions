@@ -1,23 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_minions/view/tela_login/tela_login_main.dart';
-import 'package:shop_minions/view/tela_splash/splash.dart';
 
+import 'package:firebase_core/firebase_core.dart';
+import 'package:shop_minions/view/wrapper.dart';
 import 'logic/manage_db/manage_remote_db_bloc.dart';
 
-void main() {
-  runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(Launcher());
 }
+ class Launcher extends StatelessWidget {
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+   @override
+   Widget build(BuildContext context) {
+     return MaterialApp(
       theme: ThemeData(primaryColor: Color.fromRGBO(229, 237, 244, 1)),
-      home: Splash(),
-
-      //MainTelaLogin(),
-    );
-  }
-}
+      home: Wrapper());
+   }
+ }
