@@ -13,7 +13,6 @@ class Wrapper extends StatelessWidget {
     return BlocBuilder<AuthBloc, AuthState>(builder: (context, state) {
       if (state is Authenticated) {
        return MyTabBarLayout();
-
       }else{
        return MyApp();
       }
