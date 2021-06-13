@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1036825490588",
+    "project_id": "shopminions-eb61d",
+    "storage_bucket": "shopminions-eb61d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1036825490588:android:2e24b9b0857f5b00e06959",
+        "android_client_info": {
+          "package_name": "com.example.shop_minions"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1036825490588-3dpnpaiac37d0bqf1v8fev7gl3ma0pdn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_ndjYIVUWXfQXuD9isJ-TMoEPK07FHVo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1036825490588-3dpnpaiac37d0bqf1v8fev7gl3ma0pdn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
