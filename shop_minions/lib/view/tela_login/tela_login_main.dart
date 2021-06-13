@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shop_minions/logic/manage_auth/auth_bloc.dart';
+import 'package:shop_minions/logic/manage_auth/auth_event.dart';
 import 'package:shop_minions/logic/manage_db/manage_remote_db_bloc.dart';
 import 'package:shop_minions/view/Tab_Bar_layout.dart';
 import 'package:shop_minions/view/tela_cadastro/tela_cadastro_main.dart';
@@ -80,9 +82,7 @@ class MainTelaLogin extends StatelessWidget {
           child: Text("Fazer Login".toUpperCase(),
               style: TextStyle(fontSize: 20, fontFamily: 'PT Sans Bold')),
           onPressed: () {
-            Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (context) => MyTabBarLayout()),
-            );
+            BlocProvider.of<AuthBloc>(context).add(LoginAnonymousUser());
           }),
     );
   }

@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shop_minions/logic/manage_auth/auth_bloc.dart';
+import 'package:shop_minions/logic/manage_auth/auth_event.dart';
 import 'package:shop_minions/logic/manage_db/manage_remote_db_bloc.dart';
 import 'package:shop_minions/view/tela01/tela01_main.dart';
 import 'package:shop_minions/view/tela02/tela02_main.dart';
@@ -18,6 +20,14 @@ class MyTabBarLayout extends StatelessWidget {
           ],
           child: Scaffold(
             appBar: AppBar(
+              actions: [
+                TextButton.icon(
+                  style: TextButton.styleFrom(primary: Colors.black),
+                  icon: Icon(Icons.logout),
+                  onPressed: (){
+                    BlocProvider.of<AuthBloc>(context).add(Logout());
+                  },label:Text("Logout"))
+              ],
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

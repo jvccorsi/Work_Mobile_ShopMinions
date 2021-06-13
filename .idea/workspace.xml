@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e5b2e2b6-8f41-44fb-8a75-313d7431b2de" name="Default Changelist" comment="" />
+    <list default="true" id="e5b2e2b6-8f41-44fb-8a75-313d7431b2de" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop_minions/lib/auth_provider/firebase_auth.dart" beforeDir="false" afterPath="$PROJECT_DIR$/shop_minions/lib/auth_provider/firebase_auth.dart" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,13 +89,13 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="100" y="100" width="1720" height="848" key="AVDManager" timestamp="1619964200097">
+    <state x="100" y="100" width="1720" height="848" key="AVDManager" timestamp="1623583713584">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="100" y="100" width="1720" height="848" key="AVDManager/0.0.1920.1050@0.0.1920.1050" timestamp="1619964200097" />
-    <state x="616" y="244" key="run.anything.popup" timestamp="1619963398285">
+    <state x="100" y="100" width="1720" height="848" key="AVDManager/0.0.1920.1050@0.0.1920.1050" timestamp="1623583713584" />
+    <state x="616" y="244" key="run.anything.popup" timestamp="1623557773871">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="616" y="244" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1619963398285" />
+    <state x="616" y="244" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1623557773871" />
   </component>
 </project>
