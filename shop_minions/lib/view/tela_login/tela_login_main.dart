@@ -9,6 +9,7 @@ import 'package:shop_minions/view/tela_cadastro/tela_cadastro_main.dart';
 
 class MainTelaLogin extends StatelessWidget {
   GlobalKey<FormState> formKey = new GlobalKey<FormState>();
+  final LoginUser loginData = new LoginUser();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,7 +53,7 @@ class MainTelaLogin extends StatelessWidget {
                           Container(
                             margin: EdgeInsets.only(right: 5),
                           ),
-                          usernameFormField('Senha', true),
+                          passwordFormField('Senha', true),
                         ],
                       ),
                       SizedBox(height: 50),
@@ -82,7 +83,10 @@ class MainTelaLogin extends StatelessWidget {
           child: Text("Fazer Login".toUpperCase(),
               style: TextStyle(fontSize: 20, fontFamily: 'PT Sans Bold')),
           onPressed: () {
-            BlocProvider.of<AuthBloc>(context).add(LoginAnonymousUser());
+            if (formKey.currentState.validate()) {
+              formKey.currentState.save();
+              BlocProvider.of<AuthBloc>(context).add(loginData);
+            }
           }),
     );
   }
@@ -119,6 +123,40 @@ class MainTelaLogin extends StatelessWidget {
           fontSize: 20,
           color: Color.fromRGBO(116, 128, 139, 1),
         ),
+        onSaved: (String inValue) {
+          loginData.username = inValue;
+        },
+        decoration: InputDecoration(
+          hintText: '$value',
+          contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+          border: InputBorder.none,
+          focusedBorder: InputBorder.none,
+          enabledBorder: InputBorder.none,
+          errorBorder: InputBorder.none,
+          disabledBorder: InputBorder.none,
+        ),
+      ),
+    );
+  }
+
+  Widget passwordFormField(value, obscure) {
+    return Container(
+      width: 300,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(29),
+      ),
+      child: TextFormField(
+        obscureText: obscure,
+        keyboardType: TextInputType.name,
+        style: TextStyle(
+          fontFamily: 'PT Sans bold',
+          fontSize: 20,
+          color: Color.fromRGBO(116, 128, 139, 1),
+        ),
+        onSaved: (String inValue) {
+          loginData.username = inValue;
+        },
         decoration: InputDecoration(
           hintText: '$value',
           contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),

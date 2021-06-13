@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shop_minions/logic/manage_auth/auth_bloc.dart';
+import 'package:shop_minions/logic/manage_auth/auth_event.dart';
 import 'package:shop_minions/model/cadastro.dart';
 import 'package:shop_minions/view/tela_login/tela_login_main.dart';
 
@@ -20,6 +23,7 @@ class MyTelaCadastro extends StatefulWidget {
 class MyTelaCadastroState extends State<MyTelaCadastro> {
   GlobalKey<FormState> formKey = new GlobalKey<FormState>();
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+  final RegisterUser registerUser = new RegisterUser();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,7 +69,7 @@ class MyTelaCadastroState extends State<MyTelaCadastro> {
                           Container(
                             margin: EdgeInsets.only(right: 5),
                           ),
-                          usernameFormField('Nome completo', false),
+                          //usernameFormField('Nome completo', false),
                         ],
                       ),
                       Container(
@@ -143,7 +147,7 @@ class MyTelaCadastroState extends State<MyTelaCadastro> {
                           Container(
                             margin: EdgeInsets.only(right: 5),
                           ),
-                          usernameFormField('Senha', true),
+                          passwordFormField('Senha', true),
                         ],
                       ),
                       Container(
@@ -159,7 +163,7 @@ class MyTelaCadastroState extends State<MyTelaCadastro> {
                           Container(
                             margin: EdgeInsets.only(right: 5),
                           ),
-                          usernameFormField('Confirme sua senha', true),
+                          //usernameFormField('Confirme sua senha', true),
                         ],
                       ),
                       Container(
@@ -175,7 +179,7 @@ class MyTelaCadastroState extends State<MyTelaCadastro> {
                           Container(
                             margin: EdgeInsets.only(right: 5),
                           ),
-                          usernameFormField('Telefone', false),
+                         // usernameFormField('Telefone', false),
                         ],
                       ),
                       Container(
@@ -234,6 +238,40 @@ class MyTelaCadastroState extends State<MyTelaCadastro> {
           fontSize: 20,
           color: Color.fromRGBO(116, 128, 139, 1),
         ),
+         onSaved: (String inValue) {
+          registerUser.username = inValue;
+        },
+        decoration: InputDecoration(
+          hintText: '$value',
+          contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+          border: InputBorder.none,
+          focusedBorder: InputBorder.none,
+          enabledBorder: InputBorder.none,
+          errorBorder: InputBorder.none,
+          disabledBorder: InputBorder.none,
+        ),
+      ),
+    );
+  }
+
+  Widget passwordFormField(value,obscure){
+    return Container(
+      width: 300,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(29),
+      ),
+      child: TextFormField(
+        obscureText: obscure,
+        keyboardType: TextInputType.name,
+        style: TextStyle(
+          fontFamily: 'PT Sans bold',
+          fontSize: 20,
+          color: Color.fromRGBO(116, 128, 139, 1),
+        ),
+         onSaved: (String inValue) {
+          registerUser.password = inValue;
+        },
         decoration: InputDecoration(
           hintText: '$value',
           contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
@@ -299,23 +337,10 @@ class MyTelaCadastroState extends State<MyTelaCadastro> {
         child: Text("Criar Conta".toUpperCase(),
             style: TextStyle(fontSize: 20, fontFamily: 'PT Sans Bold')),
         onPressed: () {
-          final snackBar = SnackBar(
-            content: Text("Conta criada com sucesso"),
-            backgroundColor: Color.fromRGBO(19, 139, 46, 1),
-            duration: Duration(seconds: 10),
-            action: SnackBarAction(
-              label: 'Voltar ao login',
-              textColor: Colors.white,
-              onPressed: () {
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => MainTelaLogin()),
-                );
-              },
-            ),
-          );
-          _scaffoldKey.currentState.showSnackBar(snackBar);
-        },
-      ),
-    );
+         if (formKey.currentState.validate()) {
+                formKey.currentState.save();
+                BlocProvider.of<AuthBloc>(context).add(registerUser);
+         }}
+    ));
   }
 }
