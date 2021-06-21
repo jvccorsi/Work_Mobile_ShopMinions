@@ -9,7 +9,7 @@ import 'package:socket_io_client/socket_io_client.dart';
 class DatabaseRemoteServer {
   static DatabaseRemoteServer helper = DatabaseRemoteServer._createInstance();
   DatabaseRemoteServer._createInstance();
-  String databaseUrl = "http://192.168.0.201:3000/pedido";
+  String databaseUrl = "http://192.168.0.113:3000/pedido";
   Dio _dio = Dio();
 
   Future<int> insertPedido(Pedido pedido) async {
@@ -33,7 +33,7 @@ class DatabaseRemoteServer {
       _controller = StreamController.broadcast();
 
       Socket socket = io(
-          "http://192.168.0.201:3000",
+          "http://192.168.0.113:3000",
           // "https://si700.herokuapp.com/",
           OptionBuilder().setTransports(['websocket']) // for Flutter or Dart VM
               .build());
