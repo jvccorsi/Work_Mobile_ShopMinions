@@ -69,7 +69,7 @@ class MyTelaCadastroState extends State<MyTelaCadastro> {
                           Container(
                             margin: EdgeInsets.only(right: 5),
                           ),
-                          //usernameFormField('Nome completo', false),
+                          usernameFormField('Nome completo', false),
                         ],
                       ),
                       Container(
@@ -85,13 +85,13 @@ class MyTelaCadastroState extends State<MyTelaCadastro> {
                           Container(
                             margin: EdgeInsets.only(right: 5),
                           ),
-                          usernameFormField('Email', false),
+                          emailFormField('Email', false),
                         ],
                       ),
                       Container(
                         margin: EdgeInsets.only(top: 30),
                       ),
-                      Row(
+                      /*Row(
                         children: [
                           Icon(
                             Icons.people_alt_sharp,
@@ -107,7 +107,7 @@ class MyTelaCadastroState extends State<MyTelaCadastro> {
                       Container(
                         margin: EdgeInsets.only(top: 10),
                       ),
-                      Row(
+                     Row(
                         children: [
                           myRadio(1),
                           Container(
@@ -133,7 +133,7 @@ class MyTelaCadastroState extends State<MyTelaCadastro> {
                           ),
                           Text("Prefiro não dizer", style: style_padrao),
                         ],
-                      ),
+                      ),*/
                       Container(
                         margin: EdgeInsets.only(top: 30),
                       ),
@@ -153,19 +153,6 @@ class MyTelaCadastroState extends State<MyTelaCadastro> {
                       Container(
                         margin: EdgeInsets.only(top: 30),
                       ),
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.lock_outline,
-                            color: Color.fromRGBO(116, 128, 139, 1),
-                            size: 30,
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(right: 5),
-                          ),
-                          //usernameFormField('Confirme sua senha', true),
-                        ],
-                      ),
                       Container(
                         margin: EdgeInsets.only(top: 30),
                       ),
@@ -179,7 +166,7 @@ class MyTelaCadastroState extends State<MyTelaCadastro> {
                           Container(
                             margin: EdgeInsets.only(right: 5),
                           ),
-                         // usernameFormField('Telefone', false),
+                         telefoneFormField('Telefone', false),
                         ],
                       ),
                       Container(
@@ -224,6 +211,37 @@ class MyTelaCadastroState extends State<MyTelaCadastro> {
   }
 
   Widget usernameFormField(value, obscure) {
+    return Container(
+      width: 300,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(29),
+      ),
+      child: TextFormField(
+        obscureText: obscure,
+        keyboardType: TextInputType.name,
+        style: TextStyle(
+          fontFamily: 'PT Sans bold',
+          fontSize: 20,
+          color: Color.fromRGBO(116, 128, 139, 1),
+        ),
+         onSaved: (String inValue) {
+          registerUser.name = inValue;
+        },
+        decoration: InputDecoration(
+          hintText: '$value',
+          contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+          border: InputBorder.none,
+          focusedBorder: InputBorder.none,
+          enabledBorder: InputBorder.none,
+          errorBorder: InputBorder.none,
+          disabledBorder: InputBorder.none,
+        ),
+      ),
+    );
+  }
+
+  Widget emailFormField(value, obscure) {
     return Container(
       width: 300,
       decoration: BoxDecoration(
@@ -285,6 +303,38 @@ class MyTelaCadastroState extends State<MyTelaCadastro> {
     );
   }
 
+
+  Widget telefoneFormField(value,obscure){
+    return Container(
+      width: 300,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(29),
+      ),
+      child: TextFormField(
+        obscureText: obscure,
+        keyboardType: TextInputType.name,
+        style: TextStyle(
+          fontFamily: 'PT Sans bold',
+          fontSize: 20,
+          color: Color.fromRGBO(116, 128, 139, 1),
+        ),
+         onSaved: (String inValue) {
+          registerUser.telefone = inValue;
+        },
+        decoration: InputDecoration(
+          hintText: '$value',
+          contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+          border: InputBorder.none,
+          focusedBorder: InputBorder.none,
+          enabledBorder: InputBorder.none,
+          errorBorder: InputBorder.none,
+          disabledBorder: InputBorder.none,
+        ),
+      ),
+    );
+  }
+
   Widget myRadio(int value) {
     return Radio(
       value: value,
@@ -317,6 +367,7 @@ class MyTelaCadastroState extends State<MyTelaCadastro> {
           setState(() {
             print(value);
             cadastro_class.sliderValue = value;
+            registerUser.valueMinion = value;
           });
         },
       ),

@@ -7,7 +7,12 @@ import 'package:shop_minions/logic/manage_db/manage_remote_db_bloc.dart';
 import 'package:shop_minions/view/Tab_Bar_layout.dart';
 import 'package:shop_minions/view/tela_cadastro/tela_cadastro_main.dart';
 
-class MainTelaLogin extends StatelessWidget {
+class SignIn extends StatefulWidget {
+  @override
+  _SignInState createState() => _SignInState();
+}
+
+class _SignInState extends State<SignIn> {
   GlobalKey<FormState> formKey = new GlobalKey<FormState>();
   final LoginUser loginData = new LoginUser();
   @override
@@ -68,6 +73,8 @@ class MainTelaLogin extends StatelessWidget {
       ),
     );
   }
+
+
 
   Widget submitButton(BuildContext context) {
     return SizedBox(
@@ -155,7 +162,8 @@ class MainTelaLogin extends StatelessWidget {
           color: Color.fromRGBO(116, 128, 139, 1),
         ),
         onSaved: (String inValue) {
-          loginData.username = inValue;
+          loginData.password = inValue;
+          
         },
         decoration: InputDecoration(
           hintText: '$value',

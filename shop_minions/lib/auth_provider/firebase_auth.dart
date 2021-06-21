@@ -1,4 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:shop_minions/logic/manage_auth/remote_server.dart';
 import 'package:shop_minions/model/user.dart';
 
 class FirebaseAuthenticationService {
@@ -21,18 +23,29 @@ class FirebaseAuthenticationService {
     return UserModel(user.uid);
   }
 
-  signInWithEmailAndPassword({String email, String password}) async{
-    UserCredential authResult = await _firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
+  signInWithEmailAndPassword({String email, String password}) async {
+    UserCredential authResult = await _firebaseAuth.signInWithEmailAndPassword(
+        email: email, password: password);
     User user = authResult.user;
     return UserModel(user.uid);
   }
-  
-  createUserWithEmailAndPassword({String email, String password}) async{
-    UserCredential authResult = await _firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
+
+  createUserWithEmailAndPassword(
+      {String email,
+      String password,
+      String name,
+      String telefone,
+      double valueMinion}) async {
+    UserCredential authResult = await _firebaseAuth
+        .createUserWithEmailAndPassword(email: email, password: password);
     User user = authResult.user;
+    FirebaseRemoteServer.helper
+        .includeUserData(user.uid, email, name, telefone, valueMinion);
+
     return UserModel(user.uid);
   }
-  signOut() async{
+
+  signOut() async {
     await _firebaseAuth.signOut();
   }
 }

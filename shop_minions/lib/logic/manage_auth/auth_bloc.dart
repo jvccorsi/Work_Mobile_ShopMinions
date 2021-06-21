@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_minions/auth_provider/firebase_auth.dart';
 import 'package:shop_minions/logic/manage_auth/auth_event.dart';
 import 'package:shop_minions/logic/manage_auth/auth_state.dart';
+import 'package:shop_minions/logic/manage_auth/remote_server.dart';
 import 'package:shop_minions/model/user.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
@@ -27,7 +28,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       }
       if (event is RegisterUser) {
         _authenticationService.createUserWithEmailAndPassword(
-            email: event.username, password: event.password);
+            email: event.username,
+            password: event.password,
+            name: event.name,
+            telefone: event.telefone,
+            valueMinion: event.valueMinion);
       } else if (event is LoginUser) {
         _authenticationService.signInWithEmailAndPassword(
             email: event.username, password: event.password);
@@ -35,6 +40,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         if (event.userModel == null) {
           yield Unauthenticad(); //yield como se fosse um return -> faz a mudança de estados
         } else {
+          FirebaseRemoteServer.uid = event.userModel.uid;
           yield Authenticated(user: event.userModel);
         }
       } else if (event is Logout) {

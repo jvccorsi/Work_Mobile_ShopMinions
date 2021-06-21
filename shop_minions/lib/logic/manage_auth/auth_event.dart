@@ -6,6 +6,9 @@ abstract class AuthEvent {}
 class RegisterUser extends AuthEvent {
   String username;
   String password;
+  String name;
+  String telefone;
+  double valueMinion;
 }
 
 class LoginUser extends AuthEvent {
