@@ -1,4 +1,4 @@
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart' show BlocBuilder;
 import 'package:shop_minions/logic/manage_auth/auth_bloc.dart';
 import 'package:shop_minions/logic/manage_auth/auth_state.dart';
 import 'package:shop_minions/view/Tab_Bar_layout.dart';
@@ -12,9 +12,10 @@ class Wrapper extends StatelessWidget {
     //return MyApp();
     return BlocBuilder<AuthBloc, AuthState>(builder: (context, state) {
       if (state is Authenticated) {
-       return MyTabBarLayout();
-      }else{
-       return MyApp();
+        print("deu bom");
+        return MyTabBarLayout();
+      } else {
+        return MyApp();
       }
     });
   }

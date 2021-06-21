@@ -17,7 +17,7 @@ class MainSplashState extends State<Splash> {
     super.initState();
     Timer(Duration(seconds: 6), () {
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => MainTelaLogin()),
+        MaterialPageRoute(builder: (context) => SignIn()),
       );
     });
   }
