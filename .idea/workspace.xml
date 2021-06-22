@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e5b2e2b6-8f41-44fb-8a75-313d7431b2de" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop_minions/lib/logic/manage_auth/auth_event.dart" beforeDir="false" afterPath="$PROJECT_DIR$/shop_minions/lib/logic/manage_auth/auth_event.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop_minions/lib/view/my_app_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/shop_minions/lib/view/my_app_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop_minions/lib/view/tela_cadastro/tela_cadastro_main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/shop_minions/lib/view/tela_cadastro/tela_cadastro_main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop_minions/lib/view/tela_login/tela_login_main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/shop_minions/lib/view/tela_login/tela_login_main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop_minions/lib/view/wrapper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/shop_minions/lib/view/wrapper.dart" afterDir="false" />
     </list>
@@ -93,10 +89,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="100" y="100" width="1720" height="848" key="AVDManager" timestamp="1624292604355">
+    <state x="100" y="100" width="1720" height="848" key="AVDManager" timestamp="1624310904682">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="100" y="100" width="1720" height="848" key="AVDManager/0.0.1920.1050@0.0.1920.1050" timestamp="1624292604355" />
+    <state x="100" y="100" width="1720" height="848" key="AVDManager/0.0.1920.1050@0.0.1920.1050" timestamp="1624310904682" />
     <state x="616" y="244" key="run.anything.popup" timestamp="1623557773871">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

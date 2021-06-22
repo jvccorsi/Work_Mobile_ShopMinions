@@ -31,7 +31,7 @@ class _SignInState extends State<SignIn> {
                   key: formKey,
                   child: Column(
                     children: [
-                      SizedBox(height: 330),
+                      SizedBox(height: 250),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
@@ -46,7 +46,7 @@ class _SignInState extends State<SignIn> {
                           usernameFormField('Email', false),
                         ],
                       ),
-                      SizedBox(height: 25),
+                      SizedBox(height: 5),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -61,7 +61,7 @@ class _SignInState extends State<SignIn> {
                           passwordFormField('Senha', true),
                         ],
                       ),
-                      SizedBox(height: 50),
+                      SizedBox(height: 20),
                       submitButton(context),
                       SizedBox(height: 10),
                       gestureLink(context),
@@ -163,7 +163,6 @@ class _SignInState extends State<SignIn> {
         ),
         onSaved: (String inValue) {
           loginData.password = inValue;
-          
         },
         decoration: InputDecoration(
           hintText: '$value',

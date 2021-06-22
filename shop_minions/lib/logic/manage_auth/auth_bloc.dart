@@ -14,8 +14,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   StreamSubscription _authenticationStream;
   AuthBloc() : super(Unauthenticad()) {
     _authenticationService = FirebaseAuthenticationService();
-    _authenticationStream =
-        _authenticationService.user.listen((UserModel userModel) {
+    _authenticationStream = _authenticationService.user.listen((UserModel userModel) {
       add(InnerServerEvent(userModel));
     });
   } //leitura de stream no construtor
@@ -27,14 +26,14 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         Unauthenticad();
       }
       if (event is RegisterUser) {
-        _authenticationService.createUserWithEmailAndPassword(
+        await _authenticationService.createUserWithEmailAndPassword(
             email: event.username,
             password: event.password,
             name: event.name,
             telefone: event.telefone,
             valueMinion: event.valueMinion);
       } else if (event is LoginUser) {
-        _authenticationService.signInWithEmailAndPassword(
+        await _authenticationService.signInWithEmailAndPassword(
             email: event.username, password: event.password);
       } else if (event is InnerServerEvent) {
         if (event.userModel == null) {
@@ -44,7 +43,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           yield Authenticated(user: event.userModel);
         }
       } else if (event is Logout) {
-        _authenticationService.signOut();
+       await _authenticationService.signOut();
       }
     } catch (e) {
       yield AuthError(message: e.toString());

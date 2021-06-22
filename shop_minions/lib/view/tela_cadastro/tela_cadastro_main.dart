@@ -5,6 +5,7 @@ import 'package:shop_minions/logic/manage_auth/auth_bloc.dart';
 import 'package:shop_minions/logic/manage_auth/auth_event.dart';
 import 'package:shop_minions/model/cadastro.dart';
 import 'package:shop_minions/view/tela_login/tela_login_main.dart';
+import 'package:flutter_phoenix/flutter_phoenix.dart';
 
 Cadastro cadastro_class = new Cadastro();
 TextStyle style_padrao = TextStyle(
@@ -88,9 +89,7 @@ class MyTelaCadastroState extends State<MyTelaCadastro> {
                           emailFormField('Email', false),
                         ],
                       ),
-                      Container(
-                        margin: EdgeInsets.only(top: 30),
-                      ),
+
                       /*Row(
                         children: [
                           Icon(
@@ -153,9 +152,6 @@ class MyTelaCadastroState extends State<MyTelaCadastro> {
                       Container(
                         margin: EdgeInsets.only(top: 30),
                       ),
-                      Container(
-                        margin: EdgeInsets.only(top: 30),
-                      ),
                       Row(
                         children: [
                           Icon(
@@ -166,7 +162,7 @@ class MyTelaCadastroState extends State<MyTelaCadastro> {
                           Container(
                             margin: EdgeInsets.only(right: 5),
                           ),
-                         telefoneFormField('Telefone', false),
+                          telefoneFormField('Telefone', false),
                         ],
                       ),
                       Container(
@@ -193,6 +189,10 @@ class MyTelaCadastroState extends State<MyTelaCadastro> {
                         margin: EdgeInsets.only(top: 30),
                       ),
                       submitButton(context),
+                       Container(
+                        margin: EdgeInsets.only(top: 30),
+                      ),
+                      restartButton(context),
                       Container(
                         //margin: EdgeInsets.all(40),
                         alignment: Alignment.bottomRight,
@@ -225,7 +225,7 @@ class MyTelaCadastroState extends State<MyTelaCadastro> {
           fontSize: 20,
           color: Color.fromRGBO(116, 128, 139, 1),
         ),
-         onSaved: (String inValue) {
+        onSaved: (String inValue) {
           registerUser.name = inValue;
         },
         decoration: InputDecoration(
@@ -256,7 +256,7 @@ class MyTelaCadastroState extends State<MyTelaCadastro> {
           fontSize: 20,
           color: Color.fromRGBO(116, 128, 139, 1),
         ),
-         onSaved: (String inValue) {
+        onSaved: (String inValue) {
           registerUser.username = inValue;
         },
         decoration: InputDecoration(
@@ -272,7 +272,7 @@ class MyTelaCadastroState extends State<MyTelaCadastro> {
     );
   }
 
-  Widget passwordFormField(value,obscure){
+  Widget passwordFormField(value, obscure) {
     return Container(
       width: 300,
       decoration: BoxDecoration(
@@ -287,7 +287,7 @@ class MyTelaCadastroState extends State<MyTelaCadastro> {
           fontSize: 20,
           color: Color.fromRGBO(116, 128, 139, 1),
         ),
-         onSaved: (String inValue) {
+        onSaved: (String inValue) {
           registerUser.password = inValue;
         },
         decoration: InputDecoration(
@@ -303,8 +303,7 @@ class MyTelaCadastroState extends State<MyTelaCadastro> {
     );
   }
 
-
-  Widget telefoneFormField(value,obscure){
+  Widget telefoneFormField(value, obscure) {
     return Container(
       width: 300,
       decoration: BoxDecoration(
@@ -319,7 +318,7 @@ class MyTelaCadastroState extends State<MyTelaCadastro> {
           fontSize: 20,
           color: Color.fromRGBO(116, 128, 139, 1),
         ),
-         onSaved: (String inValue) {
+        onSaved: (String inValue) {
           registerUser.telefone = inValue;
         },
         decoration: InputDecoration(
@@ -335,7 +334,7 @@ class MyTelaCadastroState extends State<MyTelaCadastro> {
     );
   }
 
-  Widget myRadio(int value) {
+  /*Widget myRadio(int value) {
     return Radio(
       value: value,
       groupValue: cadastro_class.radioValue,
@@ -348,7 +347,7 @@ class MyTelaCadastroState extends State<MyTelaCadastro> {
         });
       },
     );
-  }
+  }*/
 
   Widget mySlider() {
     return SliderTheme(
@@ -376,22 +375,41 @@ class MyTelaCadastroState extends State<MyTelaCadastro> {
 
   Widget submitButton(BuildContext context) {
     return SizedBox(
-      height: 50,
-      width: 400,
-      child: RaisedButton(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(18.0),
-          side: BorderSide(color: Color.fromRGBO(43, 105, 161, 1)),
-        ),
-        color: Color.fromRGBO(43, 105, 161, 1),
-        textColor: Colors.white,
-        child: Text("Criar Conta".toUpperCase(),
-            style: TextStyle(fontSize: 20, fontFamily: 'PT Sans Bold')),
-        onPressed: () {
-         if (formKey.currentState.validate()) {
+        height: 50,
+        width: 400,
+        child: RaisedButton(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(18.0),
+              side: BorderSide(color: Color.fromRGBO(43, 105, 161, 1)),
+            ),
+            color: Color.fromRGBO(43, 105, 161, 1),
+            textColor: Colors.white,
+            child: Text("Criar Conta".toUpperCase(),
+                style: TextStyle(fontSize: 20, fontFamily: 'PT Sans Bold')),
+            onPressed: () {
+              if (formKey.currentState.validate()) {
                 formKey.currentState.save();
                 BlocProvider.of<AuthBloc>(context).add(registerUser);
-         }}
-    ));
+              }
+            }));
+  }
+
+  Widget restartButton(BuildContext context) {
+    return SizedBox(
+        height: 50,
+        width: 400,
+        child: RaisedButton(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(18.0),
+              side: BorderSide(color: Color.fromRGBO(43, 105, 161, 1)),
+            ),
+            color: Color.fromRGBO(43, 105, 161, 1),
+            textColor: Colors.white,
+            child: Text("Efetuar login".toUpperCase(),
+                style: TextStyle(fontSize: 20, fontFamily: 'PT Sans Bold')),
+            onPressed: () {
+              Phoenix.rebirth(context);
+            }));
   }
 }
+
