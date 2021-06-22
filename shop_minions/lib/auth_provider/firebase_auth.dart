@@ -7,7 +7,7 @@ class FirebaseAuthenticationService {
   FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
   Stream<UserModel> get user {
-    //criação de um stream
+   //CRIANDO UMA STREAM
     return _firebaseAuth
         .authStateChanges()
         .map((User user) => _userFromFirebaseUser(user));

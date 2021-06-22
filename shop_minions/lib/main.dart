@@ -5,14 +5,18 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_minions/view/wrapper.dart';
 import 'logic/manage_auth/auth_bloc.dart';
 import 'logic/manage_db/manage_remote_db_bloc.dart';
+import 'package:flutter_phoenix/flutter_phoenix.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();//inicializando o firebase
   await Firebase.initializeApp();
-  runApp(Launcher());
+ runApp(
+    Phoenix(
+      child: Launcher(),
+    ),
+  );
 }
  class Launcher extends StatelessWidget {
-
    @override
    Widget build(BuildContext context) {
      return BlocProvider<AuthBloc>

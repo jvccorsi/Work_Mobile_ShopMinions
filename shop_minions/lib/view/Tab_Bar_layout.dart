@@ -25,7 +25,7 @@ class MyTabBarLayout extends StatelessWidget {
                   style: TextButton.styleFrom(primary: Colors.black),
                   icon: Icon(Icons.logout),
                   onPressed: (){
-                    BlocProvider.of<AuthBloc>(context).add(Logout());
+                    BlocProvider.of<AuthBloc>(context).add(Logout());//FAZENDO LOGOUT
                   },label:Text("Logout"))
               ],
               title: Row(
